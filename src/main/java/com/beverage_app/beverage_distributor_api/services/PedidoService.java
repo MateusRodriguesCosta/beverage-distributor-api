@@ -58,7 +58,7 @@ public class PedidoService {
                     PedidoFornecedorResponseDTO.class
             );
         } catch (RestClientException ex) {
-            throw new FornecedorServiceUnavailableException("Serviço da AMBEV indisponível.", ex);
+            throw new FornecedorServiceUnavailableException("Serviço indisponível.", ex);
         }
     }
 }
