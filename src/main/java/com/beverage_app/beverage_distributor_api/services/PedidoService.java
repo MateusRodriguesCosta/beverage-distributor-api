@@ -9,7 +9,6 @@ import com.beverage_app.beverage_distributor_api.exceptions.PedidoQuantidadeInsu
 import com.beverage_app.beverage_distributor_api.exceptions.RevendaNotFoundException;
 import com.beverage_app.beverage_distributor_api.mappers.PedidoClienteMapper;
 import com.beverage_app.beverage_distributor_api.models.PedidoCliente;
-import com.beverage_app.beverage_distributor_api.models.Revenda;
 import com.beverage_app.beverage_distributor_api.repositories.PedidoRepository;
 import com.beverage_app.beverage_distributor_api.repositories.RevendaRepository;
 import org.springframework.stereotype.Service;
