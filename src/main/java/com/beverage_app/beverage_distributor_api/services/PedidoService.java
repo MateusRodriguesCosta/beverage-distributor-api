@@ -1,9 +1,10 @@
 package com.beverage_app.beverage_distributor_api.services;
 
 import com.beverage_app.beverage_distributor_api.dtos.ItemPedidoDTO;
-import com.beverage_app.beverage_distributor_api.dtos.PedidoClienteDTO;
-import com.beverage_app.beverage_distributor_api.dtos.PedidoFornecedorRequestDTO;
-import com.beverage_app.beverage_distributor_api.dtos.PedidoFornecedorResponseDTO;
+import com.beverage_app.beverage_distributor_api.dtos.pedido_cliente.PedidoClienteRequestDTO;
+import com.beverage_app.beverage_distributor_api.dtos.pedido_cliente.PedidoClienteResponseDTO;
+import com.beverage_app.beverage_distributor_api.dtos.pedido_fornecedor.PedidoFornecedorRequestDTO;
+import com.beverage_app.beverage_distributor_api.dtos.pedido_fornecedor.PedidoFornecedorResponseDTO;
 import com.beverage_app.beverage_distributor_api.exceptions.FornecedorServiceUnavailableException;
 import com.beverage_app.beverage_distributor_api.exceptions.PedidoQuantidadeInsuficienteException;
 import com.beverage_app.beverage_distributor_api.exceptions.RevendaNotFoundException;
@@ -33,10 +34,10 @@ public class PedidoService {
         this.restTemplate = restTemplate;
     }
 
-    public PedidoClienteDTO createPedidoCliente(PedidoClienteDTO pedidoClienteDTO) {
-        PedidoCliente pedidoCliente = pedidoClienteMapper.toPedidoCliente(pedidoClienteDTO);
+    public PedidoClienteResponseDTO createPedidoCliente(PedidoClienteRequestDTO pedidoClienteRequestDTO) {
+        PedidoCliente pedidoCliente = pedidoClienteMapper.toPedidoCliente(pedidoClienteRequestDTO);
         PedidoCliente savedPedidoCliente = pedidoRepository.save(pedidoCliente);
-        return pedidoClienteMapper.toPedidoClienteDTO(savedPedidoCliente);
+        return pedidoClienteMapper.toPedidoClienteResponseDTO(savedPedidoCliente);
     }
 
     public PedidoFornecedorResponseDTO createPedidoFornecedor(PedidoFornecedorRequestDTO requestDTO) {

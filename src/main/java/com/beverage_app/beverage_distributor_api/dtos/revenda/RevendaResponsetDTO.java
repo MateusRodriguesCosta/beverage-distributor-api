@@ -1,11 +1,12 @@
-package com.beverage_app.beverage_distributor_api.dtos;
+package com.beverage_app.beverage_distributor_api.dtos.revenda;
 
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class RevendaDTO {
+public class RevendaResponsetDTO {
+    private Long id;
     private String cnpj;
     private String razaoSocial;
     private String nomeFantasia;

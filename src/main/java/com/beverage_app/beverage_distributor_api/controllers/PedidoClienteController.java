@@ -1,6 +1,7 @@
 package com.beverage_app.beverage_distributor_api.controllers;
 
-import com.beverage_app.beverage_distributor_api.dtos.PedidoClienteDTO;
+import com.beverage_app.beverage_distributor_api.dtos.pedido_cliente.PedidoClienteRequestDTO;
+import com.beverage_app.beverage_distributor_api.dtos.pedido_cliente.PedidoClienteResponseDTO;
 import com.beverage_app.beverage_distributor_api.services.PedidoService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +21,8 @@ public class PedidoClienteController {
     }
 
     @PostMapping
-    public ResponseEntity<PedidoClienteDTO> createPedidoCliente(@RequestBody @Valid PedidoClienteDTO pedidoClienteDTO) {
-        PedidoClienteDTO createdPedidoCliente = pedidoService.createPedidoCliente(pedidoClienteDTO);
+    public ResponseEntity<PedidoClienteResponseDTO> createPedidoCliente(@RequestBody @Valid PedidoClienteRequestDTO pedidoClienteRequestDTO) {
+        PedidoClienteResponseDTO createdPedidoCliente = pedidoService.createPedidoCliente(pedidoClienteRequestDTO);
         return ResponseEntity.ok(createdPedidoCliente);
     }
 }

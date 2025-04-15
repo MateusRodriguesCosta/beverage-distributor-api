@@ -1,6 +1,7 @@
 package com.beverage_app.beverage_distributor_api.controllers;
 
-import com.beverage_app.beverage_distributor_api.dtos.RevendaDTO;
+import com.beverage_app.beverage_distributor_api.dtos.revenda.RevendaRequestDTO;
+import com.beverage_app.beverage_distributor_api.dtos.revenda.RevendaResponsetDTO;
 import com.beverage_app.beverage_distributor_api.services.RevendaService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +21,8 @@ public class RevendaController {
     }
 
     @PostMapping
-    public ResponseEntity<RevendaDTO> createRevenda(@RequestBody @Valid RevendaDTO revendaDTO) {
-        RevendaDTO createdRevenda = revendaService.createRevenda(revendaDTO);
+    public ResponseEntity<RevendaResponsetDTO> createRevenda(@RequestBody @Valid RevendaRequestDTO revendaRequestDTO) {
+        RevendaResponsetDTO createdRevenda = revendaService.createRevenda(revendaRequestDTO);
         return ResponseEntity.ok(createdRevenda);
     }
 }

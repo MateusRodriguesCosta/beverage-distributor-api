@@ -1,6 +1,7 @@
 package com.beverage_app.beverage_distributor_api.services;
 
-import com.beverage_app.beverage_distributor_api.dtos.RevendaDTO;
+import com.beverage_app.beverage_distributor_api.dtos.revenda.RevendaRequestDTO;
+import com.beverage_app.beverage_distributor_api.dtos.revenda.RevendaResponsetDTO;
 import com.beverage_app.beverage_distributor_api.mappers.RevendaMapper;
 import com.beverage_app.beverage_distributor_api.models.Revenda;
 import com.beverage_app.beverage_distributor_api.repositories.RevendaRepository;
@@ -18,9 +19,9 @@ public class RevendaService {
         this.revendaMapper = revendaMapper;
     }
 
-    public RevendaDTO createRevenda(RevendaDTO revendaDTO) {
-        Revenda revenda = this.revendaMapper.toRevenda(revendaDTO);
+    public RevendaResponsetDTO createRevenda(RevendaRequestDTO revendaRequestDTO) {
+        Revenda revenda = this.revendaMapper.toRevenda(revendaRequestDTO);
         Revenda savedRevenda = this.revendaRepository.save(revenda);
-        return this.revendaMapper.toCadastroRevendaDTO(savedRevenda);
+        return this.revendaMapper.toRevendaResponseDTO(savedRevenda);
     }
 }

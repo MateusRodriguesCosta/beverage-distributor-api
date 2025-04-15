@@ -1,7 +1,7 @@
 package com.beverage_app.beverage_distributor_api.controllers;
 
-import com.beverage_app.beverage_distributor_api.dtos.PedidoFornecedorRequestDTO;
-import com.beverage_app.beverage_distributor_api.dtos.PedidoFornecedorResponseDTO;
+import com.beverage_app.beverage_distributor_api.dtos.pedido_fornecedor.PedidoFornecedorRequestDTO;
+import com.beverage_app.beverage_distributor_api.dtos.pedido_fornecedor.PedidoFornecedorResponseDTO;
 import com.beverage_app.beverage_distributor_api.services.PedidoService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
