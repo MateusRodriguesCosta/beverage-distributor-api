@@ -20,7 +20,7 @@ public class RevendaController {
     }
 
     @PostMapping
-    public ResponseEntity<CadastroRevendaDTO> creteRevenda(@RequestBody @Valid CadastroRevendaDTO revendaDTO) {
+    public ResponseEntity<CadastroRevendaDTO> createRevenda(@RequestBody @Valid CadastroRevendaDTO revendaDTO) {
         CadastroRevendaDTO createdRevenda = revendaService.createRevenda(revendaDTO);
         return ResponseEntity.ok(createdRevenda);
     }
