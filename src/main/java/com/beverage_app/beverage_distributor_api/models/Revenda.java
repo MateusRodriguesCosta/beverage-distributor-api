@@ -24,6 +24,7 @@ public class Revenda {
 
     @NotBlank(message = "CNPJ é obrigatório")
     @Pattern(regexp = "\\d{14}", message = "CNPJ inválido")
+    @Column(unique = true)
     private String cnpj;
 
     @NotBlank(message = "Razão Social é obrigatória")
