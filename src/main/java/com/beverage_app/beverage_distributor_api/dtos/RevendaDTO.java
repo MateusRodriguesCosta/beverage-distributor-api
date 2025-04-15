@@ -5,8 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class CadastroRevendaDTO {
-
+public class RevendaDTO {
     private String cnpj;
     private String razaoSocial;
     private String nomeFantasia;
