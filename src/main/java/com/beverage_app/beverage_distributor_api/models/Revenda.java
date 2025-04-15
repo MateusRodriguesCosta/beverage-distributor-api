@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.br.CNPJ;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class Revenda {
     private Long id;
 
     @NotBlank(message = "CNPJ é obrigatório")
-    @Pattern(regexp = "\\d{14}", message = "CNPJ inválido")
+    @CNPJ(message = "CNPJ inválido")
     @Column(unique = true)
     private String cnpj;
 
